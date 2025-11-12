@@ -12,12 +12,12 @@ const isUser = computed(() => props.message.sender === 'user')
 const bubbleClasses = computed(() => {
   if (isUser.value) {
     return props.index % 2 === 0
-      ? 'self-end bg-indigo-500 text-white'
-      : 'self-end bg-violet-500 text-white'
+      ? 'self-end bg-violet-500 text-white'
+      : 'self-end bg-violet-700 text-white'
   } else {
     return props.index % 2 === 0
-      ? 'self-start bg-fuchsia-500 text-white'
-      : 'self-start bg-rose-500 text-white'
+      ? 'self-start bg-emerald-200 text-gray-900'
+      : 'self-start bg-emerald-300 text-gray-900'
   }
 })
 </script>
@@ -25,7 +25,7 @@ const bubbleClasses = computed(() => {
 <template>
   <div :class="['max-w-[85%] break-words px-4 py-2 rounded-2xl shadow-sm animate-fade', bubbleClasses]">
     <div class="text-sm leading-relaxed">{{ message.text }}</div>
-    <div class="text-[10px] text-purple-200/70 mt-1 text-right">{{ message.time }}</div>
+    <div class="text-[10px] text-white/40 mt-1 text-right">{{ message.time }}</div>
   </div>
 </template>
 
